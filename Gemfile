@@ -30,9 +30,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'jquery-easing-rails'
+gem 'devise'
+gem 'activeadmin'
 	
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
