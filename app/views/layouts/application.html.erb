@@ -47,29 +47,29 @@
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                   </button>
-                  <a class="navbar-brand page-scroll" href="#page-top">Sumiled S.A.</a>
+                  <a class="navbar-brand page-scroll" href="<%= '/' unless @page_scroll %>#page-top"><%= image_tag("logo.png")%></a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                       <li class="hidden">
-                          <a href="#page-top"></a>
+                          <a href="<%= '/' unless @page_scroll %>#page-top"></a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#services">Servicios</a>
+                          <a class="page-scroll" href="<%= '/' unless @page_scroll %>#services">Servicios</a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#portfolio">Destacados</a>
+                          <a class="page-scroll" href="<%= '/' unless @page_scroll %>#highlights">Destacados</a>
+                      </li>
+                      <li class="<%= @current_path == 'products' ? 'active' : 'no-active' %>">
+                          <a href="<%=products_path%>">Productos</a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#about">Productos</a>
+                          <a class="page-scroll" href="<%= '/' unless @page_scroll %>#team">Team</a>
                       </li>
                       <li>
-                          <a class="page-scroll" href="#team">Team</a>
-                      </li>
-                      <li>
-                          <a class="page-scroll" href="#contact">Contactanos</a>
+                          <a class="page-scroll" href="<%= '/' unless @page_scroll %>#contact">Contactanos</a>
                       </li>
                   </ul>
               </div>
@@ -105,5 +105,14 @@
       </div>
     </footer>
     <%= javascript_include_tag 'application'%>
+    <script type="text/javascript">
+      <% if @page_scroll %>
+        // Highlight the top nav as scrolling occurs
+        $('body').scrollspy({
+            target: '.navbar-fixed-top',
+            offset: 51
+        });
+      <% end %>
+    </script>
   </body>
 </html>

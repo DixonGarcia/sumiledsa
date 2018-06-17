@@ -2,6 +2,8 @@ class Product < ApplicationRecord
   attr_accessor :images_raw
   before_create :set_images
 
+  scope :pinneds, -> {where(pinned: true)}
+
   def images_raw
     self.images.join("\n") unless self.images.nil?
   end

@@ -1,0 +1,38 @@
+<header class="product-detail">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in"></div>
+      <div class="intro-heading"><%=@product.name%></div>
+      <a href="#productImages" class="page-scroll btn btn-xl">Más</a>
+    </div>
+  </div>
+</header>
+<section id="details">
+  <div id="productImages" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% (0..@product.images.size).each do |i| %>
+        <li data-target="#productImages" data-slide-to="<%=i%>" class="<%= 'active' if i==0%>"></li>
+      <%end%>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <% @product.images.each_with_index do |img,i| %>
+        <div class="item <%= 'active' if i == 0%>">
+          <img src="<%=img%>" >
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#productImages" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#productImages" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
