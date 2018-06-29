@@ -105,6 +105,9 @@
       </div>
     </footer>
     <%= javascript_include_tag 'application'%>
+    <% if controller_name == "products" %>
+      <%= javascript_include_tag 'products' %>
+    <%end%>
     <script type="text/javascript">
       <% if @page_scroll %>
         // Highlight the top nav as scrolling occurs

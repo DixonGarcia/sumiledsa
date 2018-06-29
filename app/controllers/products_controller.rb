@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
     @products = Product.all
     @page_scroll = false
     @current_path = "products"
+    @enable_sidebar = true
+    @title = "Productos"
     puts params[:controller]
   end
   def show

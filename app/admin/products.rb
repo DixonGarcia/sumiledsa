@@ -12,12 +12,13 @@ ActiveAdmin.register Product do
 #   permitted
 # end
 
-permit_params :code, :name, :images, :images_raw, :pinned
+permit_params :code, :name, :images, :images_raw, :pinned, :description
 
 form html: {multipart: true} do |f|
   f.inputs do
     f.input :code
     f.input :name
+    f.input :description
     f.input :images_raw, as: :text
     f.input :pinned, as: :boolean
   end
@@ -28,6 +29,7 @@ show do
   attributes_table do
     row :code
     row :name
+    row :description
     row "Images" do 
       ul do 
         product.images.each do |img|
@@ -39,7 +41,6 @@ show do
     end
     row :created_at
     row :pinned
-
   end
 end
 

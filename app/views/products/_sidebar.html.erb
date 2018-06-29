@@ -1,0 +1,27 @@
+<div id="sidebar" class="right sidebar fixed side-nav">
+  <h4> Categorías </h4>
+  <ul >
+    <li><%= link_to 'Top level item', "#" , {class: "active"}%></li>
+    <li>
+      <input id="group-1" type="checkbox" hidden/>
+      <label for="group-1"><span class="fa fa-angle-right"></span>First Level</label>
+      <ul class="group-list">
+        <li><%= link_to '1st level item', "#" %></li>
+        <li>
+          <input id="sub-group-1" type="checkbox" hidden />
+          <label for="sub-group-1"><span class="fa fa-angle-right"></span> Second level</label>
+          <ul class="sub-group-list">
+            <li><%= link_to '2nd level item', "#" %></li>
+            <li>
+             <input id="sub-sub-group-1" type="checkbox" hidden />
+              <label for="sub-sub-group-1"><span class="fa fa-angle-right"></span> Third level</label>
+              <ul class="sub-sub-group-list">
+                <li><%= link_to '3rd level item', "#" %></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

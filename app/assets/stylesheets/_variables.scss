@@ -6,6 +6,10 @@ $theme-primary:    #2957a4;
 $theme-secundary:  #fed136;
 $theme-danger:     #e74c3c;
 
+$base-medium: lighten($theme-primary, 6.7%) !default;
+$base-light: lighten($theme-primary, 16.7%) !default;
+$base-lighter: lighten($theme-primary, 26.7%) !default;
+
 $gray-base:			#000 !default;
 $gray-darker:		lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:			lighten($gray-base, 20%) !default;   // #333
